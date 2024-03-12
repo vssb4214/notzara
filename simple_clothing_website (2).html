@@ -11,7 +11,7 @@
     margin: 0; 
     padding: 0; 
     box-sizing: border-box;
-    background-image: url('background.jpg'); /* Path to your uploaded background image */
+    background-image: url('background2.png'); /* Path to your uploaded background image */
     background-size: cover;
     background-position: center;
     background-attachment: fixed; /* Keeps the background image fixed during scroll */
@@ -69,6 +69,35 @@
   .dropdown-content a:hover {
     background-color: #f1f1f1;
   }
+  .filters {
+    padding: 1rem;
+    background-color: transparent;
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+    margin-left: 1rem; /* Adjust left margin to move the filters to the left */
+    width: auto; /* Adjust the width of the filter background */
+  }
+
+  .filter-group {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .filter-group label,
+  .filter-group select {
+    margin-bottom: 0.5rem;
+  }
+
+  footer {
+    background-color: transparent; /* Removes the background */
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+  }
   .promo {
     background: #eee; /* Placeholder for background image */
     padding: 2rem; /* Adjust padding as needed */
@@ -125,7 +154,7 @@
     background: #333;
   }
   footer {
-    background-color: #333;
+    background-color: transparent;
     color: white;
     text-align: center;
     padding: 1rem;
@@ -137,91 +166,112 @@
 </head>
 <body>
 
-<header class="header">
-  <div class="logo">NOTZARA</div>
-  <div class="search-container">
-    <input type="text" placeholder="Search..." class="search-box">
-    <button class="search-button">Search</button>
-  </div>
-  <div class="view-options">
-    <button id="list-view">List View</button>
-    <button id="grid-view">Grid View</button>
-  </div>
-</header>
-
-<nav class="nav">
-    <div class="dropdown">
-        <button class="dropbtn">WOMAN</button>
-        <div class="dropdown-content">
-          <a href="#">Tops</a>
-          <a href="#">Jeans</a>
-          <a href="#">Dresses</a>
-          <a href="#">Jackets</a>
+    <header class="header">
+        <div class="logo">NOTZARA</div>
+        <div class="search-container">
+          <input type="text" placeholder="Search..." class="search-box">
+          <button class="search-button">Search</button>
+        </div>
+        <div class="view-options">
+          <button id="list-view">List View</button>
+          <button id="grid-view">Grid View</button>
+        </div>
+      </header>
+      
+      <nav class="nav">
+          <div class="dropdown">
+              <button class="dropbtn">WOMAN</button>
+              <div class="dropdown-content">
+                <a href="#">Tops</a>
+                <a href="#">Jeans</a>
+                <a href="#">Dresses</a>
+                <a href="#">Jackets</a>
+              </div>
+            </div>
+            <div class="dropdown">
+              <button class="dropbtn">MAN</button>
+              <div class="dropdown-content">
+                <a href="#">Shirts</a>
+                <a href="#">Pants</a>
+                <a href="#">Suits</a>
+                <a href="#">Jackets</a>
+              </div>
+            </div>
+            <div class="dropdown">
+              <button class="dropbtn">KIDS</button>
+              <div class="dropdown-content">
+                <a href="#">Girls Clothing</a>
+                <a href="#">Boys Clothing</a>
+                <a href="#">Toys</a>
+                <a href="#">Accessories</a>
+              </div>
+            </div>
+      </nav>
+      
+      <div class="filters">
+        <div class="filter-group">
+          <label for="size-select">Size:</label>
+          <select id="size-select" name="size">
+            <option value="">All Sizes</option>
+            <option value="xs">XS</option>
+            <option value="s">S</option>
+            <option value="m">M</option>
+            <option value="l">L</option>
+            <option value="xl">XL</option>
+          </select>
+        </div>
+      
+        <div class="filter-group">
+          <label for="color-select">Color:</label>
+          <select id="color-select" name="color">
+            <option value="">All Colors</option>
+            <option value="red">Red</option>
+            <option value="green">Green</option>
+            <option value="blue">Blue</option>
+            <option value="black">Black</option>
+            <option value="white">White</option>
+          </select>
         </div>
       </div>
-      <div class="dropdown">
-        <button class="dropbtn">MAN</button>
-        <div class="dropdown-content">
-          <a href="#">Shirts</a>
-          <a href="#">Pants</a>
-          <a href="#">Suits</a>
-          <a href="#">Jackets</a>
+      
+      <section class="product-grid">
+        <!-- Example product 1 -->
+        <div class="product">
+          <img src="fish.jpg" alt="Product 1">
+          <h3>Fishing Hat</h3>
+          <p>$102.96</p>
+          <button class="save-button">Save</button>
         </div>
-      </div>
-      <div class="dropdown">
-        <button class="dropbtn">KIDS</button>
-        <div class="dropdown-content">
-          <a href="#">Girls Clothing</a>
-          <a href="#">Boys Clothing</a>
-          <a href="#">Toys</a>
-          <a href="#">Accessories</a>
+        <!-- Example product 2 -->
+        <div class="product">
+          <img src="goochi_belt.jpg" alt="Product 2">
+          <h3>Goochi Belt</h3>
+          <p>$2.00</p>
+          <button class="save-button">Save</button>
         </div>
-      </div>
-    </nav>
-
-<section class="promo">
-  <h2>WEEKLY PROMOTION</h2>
-  <p class="promo-offer">free goochi belt with any purchase!</p>
-</section>
-
-<section class="product-grid">
-  <!-- Example product 1 -->
-  <div class="product">
-    <img src="fish.jpg" alt="Product 1">
-    <h3>Fishing Hat</h3>
-    <p>$102.96</p>
-    <button class="save-button">Save</button>
-  </div>
-  <!-- Example product 2 -->
-  <div class="product">
-    <img src="goochi_belt.jpg" alt="Product 2">
-    <h3>goochi belt</h3>
-    <p>$2.00</p>
-    <button class="save-button">Save</button>
-  </div>
-  <!-- Example product 3 -->
-  <div class="product">
-    <img src="sock_and_birk.jpg" alt="Product 3">
-    <h3>Socks with Birkenstocks</h3>
-    <p>$10.21</p>
-    <button class="save-button">Save</button>
-  </div>
-  <!-- Example product 4 -->
-  <div class="product">
-    <img src="socks.jpg" alt="Socks">
-    <h3>Socks</h3>
-    <p>$54.99</p>
-    <button class="save-button">Save</button>
-  </div>
-</section>
-
-<footer>
-  <p>&copy; 2024 Zara Inspired Website</p>
-</footer>
-
-<script>
-  // JavaScript for view options functionality will go here
-</script>
-
-</body>
-</html>
+        <!-- Example product 3 -->
+        <div class="product">
+          <img src="sock_and_birk.jpg" alt="Product 3">
+          <h3>Socks with Birkenstocks</h3>
+          <p>$10.21</p>
+          <button class="save-button">Save</button>
+        </div>
+        <!-- Example product 4 -->
+        <div class="product">
+          <img src="socks.jpg" alt="Socks">
+          <h3>Socks</h3>
+          <p>$54.99</p>
+          <button class="save-button">Save</button>
+        </div>
+      </section>
+      
+      <footer>
+        <p>&copy; Design 1 Winter 2024</p>
+      </footer>
+      
+      <script>
+        // JavaScript for view options and filters functionality will go here
+      </script>
+      
+      </body>
+      </html>
