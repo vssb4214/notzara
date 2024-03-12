@@ -1,81 +1,227 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clothing Store</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-        .header {
-            background-color: #333;
-            color: #fff;
-            padding: 10px 0;
-            text-align: center;
-        }
-        .nav-bar {
-            background-color: #444;
-            overflow: hidden;
-        }
-        .nav-bar a {
-            float: left;
-            display: block;
-            color: white;
-            text-align: center;
-            padding: 14px 20px;
-            text-decoration: none;
-        }
-        .nav-bar a:hover {
-            background-color: #ddd;
-            color: black;
-        }
-        .container {
-            padding: 20px;
-        }
-        .product {
-            background-color: #fff;
-            margin: 20px 0;
-            padding: 20px;
-            border: 1px solid #ddd;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zara Inspired Website</title>
+<style>
+  /* Style rules */
+  body { 
+    font-family: Arial, sans-serif; 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box;
+    background-image: url('background.jpg'); /* Path to your uploaded background image */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Keeps the background image fixed during scroll */
+  }
+  .header, .view-options { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 1rem;
+  }
+  .header { 
+    border-bottom: 1px solid #ccc;
+  }
+  .logo {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  .nav, .dropdown-content, .search-container, .view-options {
+    display: flex; 
+    align-items: center;
+  }
+  .search-container {
+    padding: 1rem;
+  }
+  .search-box {
+    padding: 0.5rem;
+    margin-right: 0.5rem;
+  }
+  .search-button {
+    padding: 0.5rem 1rem;
+  }
+  .nav div {
+    position: relative;
+  }
+  .dropdown {
+    padding: 0 1rem;
+  }
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  .dropdown-content a {
+    color: #333;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  .dropdown-content a:hover {
+    background-color: #f1f1f1;
+  }
+  .promo {
+    background: #eee; /* Placeholder for background image */
+    padding: 2rem; /* Adjust padding as needed */
+    text-align: center;
+    width: 20%; /* Adjust width as desired */
+    margin: 2rem auto; /* Centers the div and adds space around it */
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1); /* Optional: Adds a subtle shadow for depth */
+    border-radius: 8px; /* Optional: Rounds the corners of the promo box */
+  }
+
+  .promo-offer {
+    margin-top: 1rem;
+    padding: 1rem;
+    background-color: #808080;
+    text-align: center;
+    font-weight: bold;
+  }
+  .product-grid {
+    display: grid; 
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 16px; 
+    padding: 1rem;
+  }
+  .product {
+    border: 1px solid #ccc;
+    padding: 1.5rem;
+    text-align: center;
+    position: relative; /* for absolute positioning of the save button */
+  }
+  .product img {
+    max-width: 100%;
+    height: auto;
+  }
+  .product h3, .product p {
+    color: #fff; /* Changing text color to white */
+  }
+  .view-options button {
+    background: none;
+    border: 1px solid #333;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  .save-button {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: #000; /* Placeholder for button design */
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+  }
+  .save-button:hover {
+    background: #333;
+  }
+  footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+  }
+</style>
 </head>
 <body>
-    <div class="header">
-        <h1>notzara</h1>
-    </div>
-    <div class="nav-bar">
-        <a href="#">Home</a>
-        <a href="#">Men</a>
-        <a href="#">Women</a>
-        <a href="#">Kids</a>
-        <a href="#">Sale</a>
-    </div>
-    <div class="container">
-        <div class="product">
-            <h2>Product Name</h2>
-            <p>Description of the product goes here. You can include details like size, color, and price.</p>
-        </div>
-        <div class="product">
-            <h2>Product Name</h2>
-            <p>Description of the product goes here. You can include details like size, color, and price.</p>
-        </div>
-    
-        <div class="product">
-            <h2>Goochi Belt</h2>
-            <p>This is a belt for kids. Perfect accessory for any outfit.</p>
-        </div>
 
-        <a href="#" class="product">
-            <h2>Goochi Belt - $21.99</h2>
-            <img src="https://writingfish.files.wordpress.com/2014/01/string.jpg" alt="Goochi Belt for Kids" style="max-width:100%;height:auto;">
-            <p>This is a belt for kids. Perfect accessory for any outfit.</p>
-        </a>
-</div>
+<header class="header">
+  <div class="logo">NOTZARA</div>
+  <div class="search-container">
+    <input type="text" placeholder="Search..." class="search-box">
+    <button class="search-button">Search</button>
+  </div>
+  <div class="view-options">
+    <button id="list-view">List View</button>
+    <button id="grid-view">Grid View</button>
+  </div>
+</header>
+
+<nav class="nav">
+    <div class="dropdown">
+        <button class="dropbtn">WOMAN</button>
+        <div class="dropdown-content">
+          <a href="#">Tops</a>
+          <a href="#">Jeans</a>
+          <a href="#">Dresses</a>
+          <a href="#">Jackets</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <button class="dropbtn">MAN</button>
+        <div class="dropdown-content">
+          <a href="#">Shirts</a>
+          <a href="#">Pants</a>
+          <a href="#">Suits</a>
+          <a href="#">Jackets</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <button class="dropbtn">KIDS</button>
+        <div class="dropdown-content">
+          <a href="#">Girls Clothing</a>
+          <a href="#">Boys Clothing</a>
+          <a href="#">Toys</a>
+          <a href="#">Accessories</a>
+        </div>
+      </div>
+    </nav>
+
+<section class="promo">
+  <h2>WEEKLY PROMOTION</h2>
+  <p class="promo-offer">free goochi belt with any purchase!</p>
+</section>
+
+<section class="product-grid">
+  <!-- Example product 1 -->
+  <div class="product">
+    <img src="fish.jpg" alt="Product 1">
+    <h3>Fishing Hat</h3>
+    <p>$102.96</p>
+    <button class="save-button">Save</button>
+  </div>
+  <!-- Example product 2 -->
+  <div class="product">
+    <img src="goochi_belt.jpg" alt="Product 2">
+    <h3>goochi belt</h3>
+    <p>$2.00</p>
+    <button class="save-button">Save</button>
+  </div>
+  <!-- Example product 3 -->
+  <div class="product">
+    <img src="sock_and_birk.jpg" alt="Product 3">
+    <h3>Socks with Birkenstocks</h3>
+    <p>$10.21</p>
+    <button class="save-button">Save</button>
+  </div>
+  <!-- Example product 4 -->
+  <div class="product">
+    <img src="socks.jpg" alt="Socks">
+    <h3>Socks</h3>
+    <p>$54.99</p>
+    <button class="save-button">Save</button>
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2024 Zara Inspired Website</p>
+</footer>
+
+<script>
+  // JavaScript for view options functionality will go here
+</script>
+
 </body>
 </html>
