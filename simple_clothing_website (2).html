@@ -140,6 +140,41 @@
     padding: 5px 10px;
     cursor: pointer;
   }
+  @media (max-width: 768px) {
+  .header, .nav, .view-options, .filters {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .search-container, .filters {
+    width: 90%; /* Allows for some margin on smaller screens */
+  }
+
+  .dropdown-content, .filter-group select {
+    width: 100%; /* Makes dropdowns and selects take the full width */
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 products per row on smaller screens */
+  }
+
+  .promo {
+    width: 90%; /* Make the promo box take more width on smaller screens */
+  }
+
+  .nav div, .filter-group {
+    margin-bottom: 1rem; /* Adds spacing between nav items and filters for clarity */
+  }
+
+  .header, .nav, .dropdown-content a, .view-options button, .filter-group label, .filter-group select, .product h3, .product p, .save-button {
+    font-size: larger; /* Increases font size for better readability on small screens */
+  }
+@media (max-width: 480px) {
+  .product-grid {
+    grid-template-columns: 1fr; 
+  }
+}
+}
   .save-button {
     position: absolute;
     bottom: 10px;
